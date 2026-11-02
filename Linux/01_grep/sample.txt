@@ -1,0 +1,6 @@
+Patient01 BRCA1 pathogenic variant
+Patient02 TP53 mutation detected
+Patient03 EGFR amplification detected
+Patient04 BRCA1 variant detected
+Patient05 KRAS mutation detected
+Patient06 TP53 pathogenic variant

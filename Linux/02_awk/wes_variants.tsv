@@ -1,0 +1,9 @@
+Sample_ID	Chromosome	Position	Gene	Consequence	Impact	AF	Depth
+S001	17	43044295	BRCA1	missense_variant	MODERATE	0.02	120
+S001	17	43045702	BRCA1	stop_gained	HIGH	0.01	150
+S002	17	7674220	TP53	missense_variant	MODERATE	0.45	90
+S003	7	55181378	EGFR	amplification	HIGH	0.12	200
+S004	12	25398284	KRAS	synonymous_variant	LOW	0.30	80
+S005	3	179234297	PIK3CA	stop_gained	HIGH	0.03	175
+S006	13	32914438	RB1	frameshift_variant	HIGH	0.02	110
+S007	2	29443680	ALK	missense_variant	MODERATE	0.08	95

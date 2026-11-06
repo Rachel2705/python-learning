@@ -1,0 +1,6 @@
+Patient_ID Name Gene Status
+P001 Rachel BRCA1 HIGH
+P002 Monica TP53 LOW
+P003 Ross EGFR HIGH
+P004 Phoebe KRAS MODERATE
+P005 Chandler BRCA2 LOW

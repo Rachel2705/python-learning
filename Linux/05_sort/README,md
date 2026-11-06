@@ -1,0 +1,99 @@
+# Linux Lesson 05: SORT
+
+## Overview
+
+`sort` is a Linux command-line utility used to arrange lines in text files alphabetically, numerically, or based on specific fields.
+
+In bioinformatics, it is useful for organizing variant annotation files by gene, chromosome, position, or allele frequency.
+
+## 1. Basic Syntax
+
+```bash
+sort [OPTIONS] filename
+```
+
+## 2. Alphabetical Sorting
+
+Sort the entire file alphabetically:
+
+```bash
+sort variants.tsv
+```
+
+Sort by Gene (column 4):
+
+```bash
+sort -k4,4 variants.tsv
+```
+
+## 3. Numerical Sorting
+
+Sort by Allele Frequency (column 6) in ascending order:
+
+```bash
+sort -k6,6n variants.tsv
+```
+
+Sort by AF in descending order:
+
+```bash
+sort -k6,6nr variants.tsv
+```
+
+- `n`: Numerical sorting.
+- `r`: Reverse sorting (descending).
+
+## 4. Sorting by Chromosome
+
+```bash
+sort -k2,2 variants.tsv
+```
+
+Note: This performs lexicographical sorting, not natural chromosome ordering.
+
+## 5. Preserve the Header
+
+Keep the header at the top while sorting the remaining records by AF:
+
+```bash
+(head -n 1 variants.tsv && tail -n +2 variants.tsv | sort -k6,6n) > sorted_variants.tsv
+```
+
+## 6. Save Sorted Output
+
+Save sorted records into a new file:
+
+```bash
+sort -k6,6n variants.tsv > sorted_variants.tsv
+```
+
+This command includes the header in sorting. Use the header-preserving method above when needed.
+
+## 7. Important Options
+
+| Option | Description |
+|---|---|
+| `-k` | Specify the sorting field |
+| `-n` | Numerical sorting |
+| `-r` | Reverse sorting |
+| `-u` | Sort and remove duplicate lines |
+| `-t` | Specify the field delimiter |
+| `-o` | Write sorted output to a file |
+
+## 8. Bioinformatics Applications
+
+- Sort variants by allele frequency.
+- Organize variant records by gene.
+- Arrange sample information.
+- Prepare files for downstream analysis.
+- Organize data before using tools such as `uniq`.
+
+## 9. Important Note
+
+Default sorting is lexicographical. For genomic workflows, chromosome names and genomic positions may require specialized natural or numeric ordering. For example, `chr2` should generally precede `chr10`.
+
+Always preserve headers separately when sorting tabular data.
+
+## 10. Key Takeaway
+
+`sort` is an essential Linux utility for organizing text and tabular data. Understanding field-based and numerical sorting is particularly useful when preparing WES variant files for downstream analysis.
